@@ -155,7 +155,7 @@ garbage, la un moment dat sa citim codul unei functii care deschide un shell.
 Asadar, am dat ca input pentru functia respectiva:
 - 100 caractere garbage;
 - un string in hexa de 55 bytes care reprezinta codul unei functii ce deschide
-un shell (luat de pe net: http://shell-storm.org/shellcode/files/shellcode-811.php)
+un shell (luat de la urmatorul [link](http://shell-storm.org/shellcode/files/shellcode-811.php))
 - inca 204 caractere garbage;
 - numarul "\x88\x44\xbb\x00", pentru a trece de if-ul care compara valoarea de
 la pozitia la care am ajuns cu acest numar;
@@ -169,13 +169,14 @@ la ce adresa pointeaza ebp-ul si adun 100, pentru ca am, inainte de citirea
 shellcode-ului, am citit 100 bytes garbage. Astfel, obtin adresa de pe stiva la
 care este salvat shellcode-ul.
 
+#### Exemplu de rulare
 
 student@IOCLA:~/tema4$ ./naughty < naughty_shellcode 
-$ ls
+\$ ls
 README	naughty  naughty_payload  naughty_shellcode  nice  nice_payload  tema4.zip
-$ pwd
+\$ pwd
 /home/student/tema4
-$ exit
+\$ exit
 student@IOCLA:~/tema4$ 
 
 
