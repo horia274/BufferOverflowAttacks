@@ -120,7 +120,7 @@ continua executia programului.
  80492ef: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; push   0x0\
  80492f1: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; call   8049030 \<read@plt>\
  80492f6: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cmp    DWORD PTR \[ebp-0xb9],0x3113cc71\
- 80492fd: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \ 
+ 80492fd: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \
  8049300: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; je     8049309 <print_flag+0x78>\
  8049302: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; push   0x1\
  8049304: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; call   8049050 \<exit@plt>\
