@@ -1,3 +1,15 @@
+# Atacuri de tip Buffer Overflow
+
+## Enunt si explicatii
+
+Fiind data doua fisiere binare, se doreste sa se gaseasca vulerabilitatile acestora
+si sa se exploateze in diverse forme. Mai multe detalii despre enunt se pot gasi [aici](https://ocw.cs.pub.ro/courses/iocla/teme/tema-4).
+Tool-urile folosite pentru descoperirea vulnerabilitatilor au fost:
+
+* gdb
+* objdump
+* ghidra
+
 ## Fisierul NICE
 
 ### Analiza binarului
