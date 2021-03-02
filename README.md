@@ -12,20 +12,20 @@ adresa va fi apelata. Asa cum se poate observa din codul de mai jos, se citesc
 0x2f9 bytes, deci adresa acelei functii va putea fi suprascrisa.
 
 
- 8049329:       55                      push   ebp
- 804932a:       89 e5                   mov    ebp,esp
- 804932c:       81 ec f9 02 00 00       sub    esp,0x2f9
- 8049332:       c7 85 22 fe ff ff c8    mov    DWORD PTR [ebp-0x1de],0x80492c8
- 8049339:       92 04 08 
- 804933c:       89 e2                   mov    edx,esp
- 804933e:       68 f9 02 00 00          push   0x2f9
- 8049343:       52                      push   edx
- 8049344:       6a 00                   push   0x0
- 8049346:       e8 e5 fc ff ff          call   8049030 <read@plt>
- 804934b:       8b 85 22 fe ff ff       mov    eax,DWORD PTR [ebp-0x1de]
- 8049351:       ff d0                   call   eax
- 8049353:       c9                      leave  
- 8049354:       c3                      ret    
+ 8049329:       55                      push   ebp\
+ 804932a:       89 e5                   mov    ebp,esp\
+ 804932c:       81 ec f9 02 00 00       sub    esp,0x2f9\
+ 8049332:       c7 85 22 fe ff ff c8    mov    DWORD PTR [ebp-0x1de],0x80492c8\
+ 8049339:       92 04 08 \
+ 804933c:       89 e2                   mov    edx,esp\
+ 804933e:       68 f9 02 00 00          push   0x2f9\
+ 8049343:       52                      push   edx\
+ 8049344:       6a 00                   push   0x0\
+ 8049346:       e8 e5 fc ff ff          call   8049030 \<read@plt>\
+ 804934b:       8b 85 22 fe ff ff       mov    eax,DWORD PTR \[ebp-0x1de]\
+ 8049351:       ff d0                   call   eax\
+ 8049353:       c9                      leave  \
+ 8049354:       c3                      ret    \
 
 
 ### Spargerea binarului
