@@ -4,11 +4,11 @@
 
 Fiind data doua fisiere binare, se doreste sa se gaseasca vulerabilitatile acestora
 si sa se exploateze in diverse forme. Mai multe detalii despre enunt se pot gasi [aici](https://ocw.cs.pub.ro/courses/iocla/teme/tema-4).
-Tool-urile folosite pentru descoperirea vulnerabilitatilor au fost:
+Aceste atacuri au fost gandite folosind masina virtuala de la acest [link](https://ocw.cs.pub.ro/courses/iocla/utile), iar tool-urile folosite pentru descoperirea vulnerabilitatilor au fost urmatoarele:
 
-* gdb
-* objdump
-* ghidra
+* *gdb*
+* *objdump*
+* *ghidra*
 
 ## Fisierul NICE
 
