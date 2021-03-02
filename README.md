@@ -12,7 +12,7 @@ adresa va fi apelata. Asa cum se poate observa din codul de mai jos, se citesc
 0x2f9 bytes, deci adresa acelei functii va putea fi suprascrisa.
 
 
- 8049329: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 55                      push   ebp\
+ 8049329: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 55 push   ebp\
  804932a: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 89 e5                   mov    ebp,esp\
  804932c: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 81 ec f9 02 00 00       sub    esp,0x2f9\
  8049332: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c7 85 22 fe ff ff c8    mov    DWORD PTR [ebp-0x1de],0x80492c8\
@@ -85,20 +85,20 @@ apelante. Concret, a patra functie apelata din main, ce are adresa  0x08049362,
 aloca 0x1f2 bytes si citeste 0x34d bytes.
 
 
- 8049362: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 55                      push   ebp
- 8049363: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 89 e5                   mov    ebp,esp
- 8049365: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 81 ec f2 01 00 00       sub    esp,0x1f2
- 804936b: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 89 e2                   mov    edx,esp
- 804936d: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 68 4b 03 00 00          push   0x34b
- 8049372: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 52                      push   edx
- 8049373: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6a 00                   push   0x0
- 8049375: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e8 b6 fc ff ff          call   8049030 <read@plt>
- 804937a: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 81 bd 75 ff ff ff 88    cmp    DWORD PTR [ebp-0x8b],0xbb4488
+ 8049362: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 55                      push   ebp\
+ 8049363: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 89 e5                   mov    ebp,esp\
+ 8049365: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 81 ec f2 01 00 00       sub    esp,0x1f2\
+ 804936b: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 89 e2                   mov    edx,esp\
+ 804936d: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 68 4b 03 00 00          push   0x34b\
+ 8049372: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 52                      push   edx\
+ 8049373: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6a 00                   push   0x0\
+ 8049375: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e8 b6 fc ff ff          call   8049030 \<read@plt>\
+ 804937a: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 81 bd 75 ff ff ff 88    cmp    DWORD PTR \[ebp-0x8b],0xbb4488\
  8049381: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 44 bb 00 
- 8049384: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 74 07                   je     804938d <print_flag+0xfc>
- 8049386: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6a 01                   push   0x1
- 8049388: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e8 c3 fc ff ff          call   8049050 <exit@plt>
- 804938d: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c9                      leave  
+ 8049384: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 74 07                   je     804938d <print_flag+0xfc>\
+ 8049386: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6a 01                   push   0x1\
+ 8049388: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e8 c3 fc ff ff          call   8049050 \<exit@plt>\
+ 804938d: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c9                      leave  \
  804938e: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c3                      ret
 
 
@@ -111,20 +111,20 @@ data in program. Astfel, prima functie din main, cea de la adresa 0x080492de:
 continua executia programului.
 
 
- 80492de: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 55                      push   ebp
- 80492df: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 89 e5                   mov    ebp,esp
- 80492e1: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 81 ec 0d 01 00 00       sub    esp,0x10d
- 80492e7: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 89 e2                   mov    edx,esp
- 80492e9: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 68 cf 00 00 00          push   0xcf
- 80492ee: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 52                      push   edx
- 80492ef: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6a 00                   push   0x0
- 80492f1: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e8 3a fd ff ff          call   8049030 <read@plt>
- 80492f6: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 81 bd 47 ff ff ff 71    cmp    DWORD PTR [ebp-0xb9],0x3113cc71
+ 80492de: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 55                      push   ebp\
+ 80492df: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 89 e5                   mov    ebp,esp\
+ 80492e1: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 81 ec 0d 01 00 00       sub    esp,0x10d\
+ 80492e7: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 89 e2                   mov    edx,esp\
+ 80492e9: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 68 cf 00 00 00          push   0xcf\
+ 80492ee: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 52                      push   edx\
+ 80492ef: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6a 00                   push   0x0\
+ 80492f1: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e8 3a fd ff ff          call   8049030 \<read@plt>\
+ 80492f6: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 81 bd 47 ff ff ff 71    cmp    DWORD PTR \[ebp-0xb9],0x3113cc71\
  80492fd: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cc 13 31 
- 8049300: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 74 07                   je     8049309 <print_flag+0x78>
- 8049302: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6a 01                   push   0x1
- 8049304: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e8 47 fd ff ff          call   8049050 <exit@plt>
- 8049309: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c9                      leave  
+ 8049300: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 74 07                   je     8049309 <print_flag+0x78>\
+ 8049302: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6a 01                   push   0x1\
+ 8049304: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e8 47 fd ff ff          call   8049050 \<exit@plt>\
+ 8049309: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c9                      leave  \
  804930a: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c3                      ret
 
 
@@ -171,12 +171,12 @@ care este salvat shellcode-ul.
 
 #### Exemplu de rulare
 
-student@IOCLA:~/tema4$ ./naughty < naughty_shellcode \
+student@IOCLA:\~/tema4$ ./naughty < naughty_shellcode \
 $ ls\
 README	naughty  naughty_payload  naughty_shellcode  nice  nice_payload  tema4.zip\
 $ pwd\
 /home/student/tema4\
 $ exit\
-student@IOCLA:~/tema4$ 
+student@IOCLA:\~/tema4$ 
 
 
