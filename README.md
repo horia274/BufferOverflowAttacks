@@ -1,6 +1,6 @@
-		Fisierul NICE
+## Fisierul NICE
 
-	1. Analiza binarului
+### Analiza binarului
 
 Functia vulnerabila se afla la adresa 0x08049329. In aceasta functie, se aloca
 spatiu pentru 0x2f9 bytes. Apoi este salvata pe stiva, mai exact la pozitia
@@ -28,7 +28,7 @@ adresa va fi apelata. Asa cum se poate observa din codul de mai jos, se citesc
  8049354:       c3                      ret    
 
 
-	2. Spargerea binarului
+### Spargerea binarului
 
 Este suficient sa suprascriu adresa acelei functii cu o alta adresa care va
 genera mesajul dorit. Aceasta adresa este 0x08049291 deoarece:
@@ -75,9 +75,9 @@ scrisa in little endian.
 
 
 
-		Fisierul NAUGHTY
+## Fisierul NAUGHTY
 
-	3. Spargerea binarului v2
+### Spargerea binarului
 
 Vulnerabilitatea in acest binar este o functie care citeste pe stiva mai mult
 decat se alocase inainte, putand astfel modifica adresa de retur a functiei
@@ -146,7 +146,7 @@ In acest fel, functia la care se trece va afisa mesajul "NAUGHTY_FLAG{...}".
 
 
 
-	4. Shellcode
+### Shellcode
 
 Folosind din nou binarul NAUGHTY, exploatam vulnerabilitatea prezentata anterior
 din a patra functie. Ideea este ca in loc sa citim o gramada de caractere
