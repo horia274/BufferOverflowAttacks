@@ -12,20 +12,20 @@ adresa va fi apelata. Asa cum se poate observa din codul de mai jos, se citesc
 0x2f9 bytes, deci adresa acelei functii va putea fi suprascrisa.
 
 
- 8049329: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 55 push   ebp\
- 804932a: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 89 e5                   mov    ebp,esp\
- 804932c: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 81 ec f9 02 00 00       sub    esp,0x2f9\
- 8049332: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c7 85 22 fe ff ff c8    mov    DWORD PTR [ebp-0x1de],0x80492c8\
- 8049339: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 92 04 08 \
- 804933c: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 89 e2                   mov    edx,esp\
- 804933e: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 68 f9 02 00 00          push   0x2f9\
- 8049343: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 52                      push   edx\
- 8049344: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6a 00                   push   0x0\
- 8049346: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e8 e5 fc ff ff          call   8049030 \<read@plt>\
- 804934b: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8b 85 22 fe ff ff       mov    eax,DWORD PTR \[ebp-0x1de]\
- 8049351: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ff d0                   call   eax\
- 8049353: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c9                      leave  \
- 8049354: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c3                      ret    
+ 8049329: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; push   ebp\
+ 804932a: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov    ebp,esp\
+ 804932c: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sub    esp,0x2f9\
+ 8049332: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov    DWORD PTR [ebp-0x1de],0x80492c8\
+ 8049339: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \
+ 804933c: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov    edx,esp\
+ 804933e: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; push   0x2f9\
+ 8049343: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; push   edx\
+ 8049344: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; push   0x0\
+ 8049346: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; call   8049030 \<read@plt>\
+ 804934b: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov    eax,DWORD PTR \[ebp-0x1de]\
+ 8049351: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; call   eax\
+ 8049353: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; leave  \
+ 8049354: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ret    
 
 
 ### Spargerea binarului
@@ -43,25 +43,25 @@ poate observa un apel al functiei "puts", care probabil printeaza mesajul
 NICE_FLAG{...}.
 
 
- 8049291: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 55                      push   ebp\
- 8049292: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 89 e5                   mov    ebp,esp\
- 8049294: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6a 04                   push   0x4\
- 8049296: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 68 66 c0 04 08          push   0x804c066\
- 804929b: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6a 00                   push   0x0\
- 804929d: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6a 00                   push   0x0\
- 804929f: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6a 00                   push   0x0\
- 80492a1: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6a 00                   push   0x0\
- 80492a3: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e8 c8 fd ff ff          call   8049070 \<ptrace@plt>\
- 80492a8: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 83 c4 10                add    esp,0x10\
- 80492ab: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 83 f8 ff                cmp    eax,0xffffffff\
- 80492ae: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 75 07                   jne    80492b7 <print_flag+0x26>\
- 80492b0: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6a 01                   push   0x1\
- 80492b2: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e8 99 fd ff ff          call   8049050 \<exit@plt>\
- 80492b7: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e8 99 ff ff ff          call   8049255 <\__x86.get_pc_thunk.bx+0x185>\
- 80492bc: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 68 28 c0 04 08          push   0x804c028\
- 80492c1: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e8 7a fd ff ff          call   8049040 \<puts@plt>\
- 80492c6: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c9                      leave  \
- 80492c7: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c3                      ret    
+ 8049291: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; push   ebp\
+ 8049292: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov    ebp,esp\
+ 8049294: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; push   0x4\
+ 8049296: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; push   0x804c066\
+ 804929b: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; push   0x0\
+ 804929d: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; push   0x0\
+ 804929f: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; push   0x0\
+ 80492a1: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; push   0x0\
+ 80492a3: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; call   8049070 \<ptrace@plt>\
+ 80492a8: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; add    esp,0x10\
+ 80492ab: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cmp    eax,0xffffffff\
+ 80492ae: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; jne    80492b7 <print_flag+0x26>\
+ 80492b0: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; push   0x1\
+ 80492b2: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; call   8049050 \<exit@plt>\
+ 80492b7: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; call   8049255 \<\_\_x86.get_pc_thunk.bx+0x185>\
+ 80492bc: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; push   0x804c028\
+ 80492c1: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; call   8049040 \<puts@plt>\
+ 80492c6: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; leave  \
+ 80492c7: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ret    
 
 
 Astfel, pentru a sparge binarul, am citit de la tastatura:
@@ -85,21 +85,21 @@ apelante. Concret, a patra functie apelata din main, ce are adresa  0x08049362,
 aloca 0x1f2 bytes si citeste 0x34d bytes.
 
 
- 8049362: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 55                      push   ebp\
- 8049363: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 89 e5                   mov    ebp,esp\
- 8049365: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 81 ec f2 01 00 00       sub    esp,0x1f2\
- 804936b: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 89 e2                   mov    edx,esp\
- 804936d: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 68 4b 03 00 00          push   0x34b\
- 8049372: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 52                      push   edx\
- 8049373: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6a 00                   push   0x0\
- 8049375: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e8 b6 fc ff ff          call   8049030 \<read@plt>\
- 804937a: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 81 bd 75 ff ff ff 88    cmp    DWORD PTR \[ebp-0x8b],0xbb4488\
- 8049381: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 44 bb 00 
- 8049384: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 74 07                   je     804938d <print_flag+0xfc>\
- 8049386: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6a 01                   push   0x1\
- 8049388: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e8 c3 fc ff ff          call   8049050 \<exit@plt>\
- 804938d: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c9                      leave  \
- 804938e: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c3                      ret
+ 8049362: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; push   ebp\
+ 8049363: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov    ebp,esp\
+ 8049365: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sub    esp,0x1f2\
+ 804936b: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov    edx,esp\
+ 804936d: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; push   0x34b\
+ 8049372: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; push   edx\
+ 8049373: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; push   0x0\
+ 8049375: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; call   8049030 \<read@plt>\
+ 804937a: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cmp    DWORD PTR \[ebp-0x8b],0xbb4488\
+ 8049381: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \
+ 8049384: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; je     804938d <print_flag+0xfc>\
+ 8049386: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; push   0x1\
+ 8049388: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; call   8049050 \<exit@plt>\
+ 804938d: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; leave  \
+ 804938e: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ret
 
 
 Pentru a putea sparge binarul, trebuie ca primele 3 functii apelate din main
@@ -111,21 +111,21 @@ data in program. Astfel, prima functie din main, cea de la adresa 0x080492de:
 continua executia programului.
 
 
- 80492de: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 55                      push   ebp\
- 80492df: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 89 e5                   mov    ebp,esp\
- 80492e1: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 81 ec 0d 01 00 00       sub    esp,0x10d\
- 80492e7: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 89 e2                   mov    edx,esp\
- 80492e9: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 68 cf 00 00 00          push   0xcf\
- 80492ee: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 52                      push   edx\
- 80492ef: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6a 00                   push   0x0\
- 80492f1: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e8 3a fd ff ff          call   8049030 \<read@plt>\
- 80492f6: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 81 bd 47 ff ff ff 71    cmp    DWORD PTR \[ebp-0xb9],0x3113cc71\
- 80492fd: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cc 13 31 
- 8049300: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 74 07                   je     8049309 <print_flag+0x78>\
- 8049302: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6a 01                   push   0x1\
- 8049304: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e8 47 fd ff ff          call   8049050 \<exit@plt>\
- 8049309: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c9                      leave  \
- 804930a: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c3                      ret
+ 80492de: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; push   ebp\
+ 80492df: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov    ebp,esp\
+ 80492e1: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sub    esp,0x10d\
+ 80492e7: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov    edx,esp\
+ 80492e9: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; push   0xcf\
+ 80492ee: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; push   edx\
+ 80492ef: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; push   0x0\
+ 80492f1: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; call   8049030 \<read@plt>\
+ 80492f6: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cmp    DWORD PTR \[ebp-0xb9],0x3113cc71\
+ 80492fd: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \ 
+ 8049300: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; je     8049309 <print_flag+0x78>\
+ 8049302: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; push   0x1\
+ 8049304: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; call   8049050 \<exit@plt>\
+ 8049309: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; leave  \
+ 804930a: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ret
 
 
 Deci trebuie avut grija cand citesc de la tastatura, sa introduc 0x10d-0xb9=84
